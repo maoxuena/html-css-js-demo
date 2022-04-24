@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 实现文本不定行数截断</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .con {
+      width: 500px;
+      overflow: hidden;
+      resize: horizontal;
+    }
+
+    .section {
+      display: flex;
+      position: relative;
+      border: 10px solid transparent;
+      outline: 1px solid;
+      overflow: hidden;
+      height: 72px;
+      margin: 10px;
+      line-height: 1.5;
+      text-align: justify;
+      flex-direction: column;
+    }
+
+    .title {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    .excerpt {
+      font-size: 14px;
+      margin-top: auto;
+      flex: 1;
+      overflow: hidden;
+      max-height: 3em;
+    }
+
+    .excerpt::before {
+      content: '...';
+      float: right;
+      height: 100%;
+      shape-outside: inset(calc(100% - 1.5em) 0 0 0);
+      display: flex;
+      align-items: flex-end;
+      margin-left: 2px;
+    }
+
+    .excerpt::after {
+      content: '';
+      position: absolute;
+      width: 999vh;
+      height: 999vh;
+      background: #fff;
+      box-shadow: -2em 2em #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="con">
+    <div class="section">
+      <h3 class="title">上海阿姨将小区草坪改成菜园</h3>
+      <p class="excerpt">4月23日，上海几位阿姨将小区草坪改造成了菜园，自己动手用锄头锄地种菜。目击者表示，特殊时期可以理解，疫情过后物业会进行管理。</p>
+    </div>
+    <div class="section">
+      <h3 class="title">中国航天日：展望未来的“星辰大海”</h3>
+      <p class="excerpt">“探索浩瀚宇宙，发展航天事业，建设航天强国，是我们不懈追求的航天梦。”几十年来，从“东方红”唱响到“神舟”逐梦，从“北斗”指路到“嫦娥”揽月、从“祝融”探火到“天宫”遨游，中国航天人以一次又一次的非凡突破，让中国印记闪耀星空。今天，是第七个中国航天日，人民网整理了我国计划及酝酿中的航天任务，一同展望中国航天未来的“星辰大海”。</p>
+    </div>
+    <div class="section">
+      <h3 class="title">人类为什么要坚持探索宇宙，生活在地球不好吗？背后的原因很现实</h3>
+      <p class="excerpt">“宇宙很大”，目前人类可以观察的宇宙被称为“可观测宇宙”，可观测宇宙的半径大约为465亿光年，在可观测宇宙之外存在着更加广阔的宇宙空间，对于人类来说465亿光年是一个可望而不可及的遥远距离，很多科学家认为，人类文明可能直到灭亡都无法走出银河系。</p>
+    </div>
+  </div>
+</body>
+
+</html>
