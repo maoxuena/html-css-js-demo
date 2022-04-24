@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>loading</title>
+</head>
+
+<body>
+  <style>
+    .progress-container {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .progress {
+      width: 33%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .progress1 .progress-outer {
+      width: 80%;
+      height: 12px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress1 .progress-enter {
+      height: inherit;
+      background: #a9c7f7;
+    }
+
+    .progress1 .progress-bg {
+      width: 60%;
+      height: inherit;
+      border-radius: 6px;
+      background: repeating-linear-gradient(-45deg, #6995dc 25%, #1a355f 0, #6995dc 50%, #1a355f 0, #6995dc 75%, #1a355f 0);
+      background-size: 16px 16px;
+      animation: progress1Animation 10s linear infinite;
+    }
+
+    .progress1 .progress-text {
+      position: absolute;
+      top: 0;
+      right: 6px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    @keyframes progress1Animation {
+      to {
+        background-position: 200% 0;
+      }
+    }
+  </style>
+
+  <body>
+    <main class="progress-container">
+      <section class="progress progress1">
+        <div class="progress-outer">
+          <!--更好的扩展-->
+          <div class="progress-enter">
+            <div class="progress-bg"></div>
+          </div>
+          <span class="progress-text">60%</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</body>
+
+</html>
