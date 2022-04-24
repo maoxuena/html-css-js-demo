@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border</title>
+  <style type="text/css">
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+    }
+
+    .border-container {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .border {
+      width: 33%;
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="border-container">
+    <section class="border border1">
+      <style type="text/css">
+        .border1 {
+          background: #0a42b2;
+        }
+
+        .border1 .default {
+          padding: 10px;
+          width: 100%;
+          border: 10px solid rgba(255, 255, 255, .2);
+          background-clip: padding-box;
+        }
+      </style>
+      <div class="default">透明边框背景</div>
+    </section>
+    <section class="border border2">
+      <style type="text/css">
+        .border2 .default {
+          height: 40px;
+          margin: 70px;
+          background: #c2d7fc;
+          box-shadow: 0 0 0 10px #a9c7fa, 0 0 0 20px #9cbef9,
+            0 0 0 30px #749ce0, 0 0 0 40px #557cbd,
+            0 0 0 50px #2b4b7e, 0 0 0 60px #1a355f;
+        }
+      </style>
+      <div class="default">多重边框(box-shadow实现)</div>
+    </section>
+    <section class="border border3">
+      <style type="text/css">
+        .border3 .default {
+          height: 60px;
+          padding: 10px;
+          background: #6995dc;
+          border: 5px solid #1a355f;
+          outline: #1a355f dashed 1px;
+          outline-offset: -10px;
+          margin-bottom: 20px;
+        }
+      </style>
+      <div class="default">多重边框(outline、outline-offset实现)</div>
+    </section>
+  </main>
+</body>
+
+</html>
