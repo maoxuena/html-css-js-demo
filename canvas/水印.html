@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水印</title>
+  <style type="text/css">
+    .swipe-content {
+      width: 100%;
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width=160 height=160 id="theCanvas" style="display:none;"></canvas>
+  <div class="swipe-content"></div>
+  <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+  <script type="text/javascript">
+    //水印部分
+    var data = "13566572589";
+    var canvas = $('#theCanvas')[0];
+    //var canvas = document.getElementById("theCanvas");
+    var ctx = canvas.getContext("2d");
+    //清除小画布
+    ctx.clearRect(0, 0, 160, 100);
+    ctx.rotate(-20 * Math.PI / 180);
+    ctx.font = "12px Microsoft YaHei";
+    ctx.fillStyle = "rgba(100,100,100,0.2)";
+    ctx.fillText(data, 52, 54);
+    ctx.rotate('20*Math.PI/180'); //坐标系还原
+    var canvasBackground = ctx.canvas.toDataURL();
+    //水印部分结束
+    $(".swipe-content").css({
+      "background": "url(" + canvasBackground + ") repeat scroll 50px 60px #ffffff"
+    });
+  </script>
+</body>
+
+</html>
