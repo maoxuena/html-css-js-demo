@@ -13,6 +13,7 @@ html、css、js 等实现的一些demo的汇总
 
 ## html + css + jq
 * CSS3时钟： [查看效果](https://maoxuena.github.io/html-css-js-demo/clock/CSS3时钟.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/clock)
+* CSS3数字时钟： [查看效果](https://maoxuena.github.io/html-css-js-demo/clock/CSS3数字时钟.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/clock)
 * 径向菜单展开： [查看效果](https://maoxuena.github.io/html-css-js-demo/menu/径向菜单展开.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/menu/clock)
 
 ## canvas
