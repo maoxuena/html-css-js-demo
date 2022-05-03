@@ -5,6 +5,7 @@ html、css、js 等实现的一些demo的汇总
 * loading： [查看效果](https://maoxuena.github.io/html-css-js-demo/loading/index.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/loading)
 * border： [查看效果](https://maoxuena.github.io/html-css-js-demo/border/index.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/border)
 * css 实现文本不定行数截断： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/css实现文本不定行数截断.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css)
+* 3D旋转菜单： [查看效果](https://maoxuena.github.io/html-css-js-demo/menu/3D旋转菜单.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/menu)
 
 ## html + css + js
 * 一个简单的收藏动画： [查看效果](https://maoxuena.github.io/html-css-js-demo/collect/index.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/collect)
@@ -14,8 +15,8 @@ html、css、js 等实现的一些demo的汇总
 ## html + css + jq
 * CSS3时钟： [查看效果](https://maoxuena.github.io/html-css-js-demo/clock/CSS3时钟.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/clock)
 * CSS3数字时钟： [查看效果](https://maoxuena.github.io/html-css-js-demo/clock/CSS3数字时钟.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/clock)
-* 径向菜单展开： [查看效果](https://maoxuena.github.io/html-css-js-demo/menu/径向菜单展开.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/menu/clock)
-* 底部弧形弹出菜单： [查看效果](https://maoxuena.github.io/html-css-js-demo/menu/底部弧形弹出菜单.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/menu/clock)
+* 径向菜单展开： [查看效果](https://maoxuena.github.io/html-css-js-demo/menu/径向菜单展开.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/menu)
+* 底部弧形弹出菜单： [查看效果](https://maoxuena.github.io/html-css-js-demo/menu/底部弧形弹出菜单.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/menu)
 
 ## canvas
 * js 实现粒子特效： [查看效果](https://maoxuena.github.io/html-css-js-demo/canvas/js实现粒子特效.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/canvas)
