@@ -33,3 +33,7 @@ html、css、js 等实现的一些demo的汇总
 
 ## 地图
 * cursor： [查看效果](https://maoxuena.github.io/html-css-js-demo/map/amap/计算两点之间距离.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/map/amap)
+
+## 组件模块
+### 轮播
+* JavaScript实现商城带产品分类banner轮播特效： [查看效果](https://maoxuena.github.io/html-css-js-demo/components/轮播/JavaScript实现商城带产品分类banner轮播特效.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/components/轮播)
