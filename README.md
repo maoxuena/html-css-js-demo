@@ -21,6 +21,7 @@ html、css、js 等实现的一些demo的汇总
 ## canvas
 * js 实现粒子特效： [查看效果](https://maoxuena.github.io/html-css-js-demo/canvas/js实现粒子特效.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/canvas)
 * 水印： [查看效果](https://maoxuena.github.io/html-css-js-demo/canvas/水印.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/canvas)
+* 星空动画： [查看效果](https://maoxuena.github.io/html-css-js-demo/canvas/星空动画.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/canvas)
 
 ## svg
 * css实现svg边框动画： [查看效果](https://maoxuena.github.io/html-css-js-demo/svg/css实现svg边框动画.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/svg)

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星空动画</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    var canvas = document.getElementById('canvas'),
+      ctx = canvas.getContext('2d'),
+      w = (canvas.width = window.innerWidth),
+      h = (canvas.height = window.innerHeight),
+      hue = 217, // 颜色
+      stars = [], // 点数组
+      index = 0, // 点数组索引
+      maxStars = 1200; // 点个数
+
+    // 圆点
+    var canvas2 = document.createElement('canvas'),
+      ctx2 = canvas2.getContext('2d');
+    canvas2.width = canvas2.height = 100;
+    var half = canvas2.width / 2;
+    var gradient2 = ctx2.createRadialGradient(
+      half,
+      half,
+      0,
+      half,
+      half,
+      half
+    ); //前三个参数是渐变圆开始的圆心做做及半径，后三个参数是第二个
+    gradient2.addColorStop(0.025, '#ccc');
+    gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+    gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+    gradient2.addColorStop(1, 'transparent');
+
+    ctx2.fillStyle = gradient2;
+    ctx2.beginPath();
+    ctx2.arc(half, half, half, 0, Math.PI * 2);
+    ctx2.fill();
+
+    function random(min, max) {
+      //随机返回一个
+      if (arguments.length < 2) {
+        max = min;
+        min = 0;
+      }
+
+      if (min > max) {
+        var l = min;
+        min = max;
+        max = l;
+      }
+
+      return Math.round(Math.random() * (max - min) + min);
+    }
+
+    function maxOrbit(x, y) {
+      //返回一个星星到中心点的距离
+      var max = Math.max(x, y),
+        diameter = random(Math.sqrt(max * max + max * max));
+      return diameter / 2;
+    }
+
+    function newStar() {
+      this.orbitRadius = maxOrbit(w, h);
+      this.radius = random(60, this.orbitRadius) / 10; //半径
+      this.speed = random(this.orbitRadius) / 90000; //速度
+
+      this.obitX = w / 2;
+      this.obitY = h / 2;
+      this.timePassed = random(0, maxStars);
+      this.alpha = random(2, 10) / 10; //透明度
+
+      index++;
+      stars[index] = this;
+    }
+
+    newStar.prototype.draw = function () {
+      var x = this.orbitRadius * Math.cos(this.timePassed) + this.obitX,
+        y = this.orbitRadius * Math.sin(this.timePassed) + this.obitY,
+        twinkle = random(10);
+
+      if (twinkle === 1 && this.alpha > 0) {
+        this.alpha -= 0.05;
+      } else if (twinkle === 2 && this.alpha < 1) {
+        this.alpha += 0.05;
+      }
+
+      ctx.globalAlpha = this.alpha;
+      ctx.drawImage(
+        canvas2,
+        x - this.radius / 2,
+        y - this.radius / 2,
+        this.radius,
+        this.radius
+      );
+      // this.timePassed += this.speed; // 顺时针
+      this.timePassed -= this.speed; //逆时针
+    };
+
+    for (i = 0; i < maxStars; i++) {
+      new newStar();
+    }
+
+    function animation() {
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.fillStyle = 'hsla(' + hue + ', 85%, 6%, 2)';
+      ctx.globalAlpha = 0.6;
+      ctx.fillRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      for (i = 1; i < stars.length; i++) {
+        stars[i].draw();
+      }
+      window.requestAnimationFrame(animation);
+    }
+    animation();
+  </script>
+</body>
+
+</html>
