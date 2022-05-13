@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算两点之间距离</title>
+  <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+  <style type="text/css">
+    html,
+    body,
+    #container {
+      height: 100%;
+    }
+
+    .info input {
+      display: inline-block;
+      width: 180px;
+      margin-left: 10px;
+    }
+
+    .btn-box {
+      text-align: right;
+    }
+
+    .btn {
+      width: 100px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <div class="info" style="min-width:15rem;">
+    <p>可拖动Marker调整位置</p>
+    <p>经纬度以空格分割，例如：116.368904 39.923423</p>
+    <div style="padding-top: 10px;">
+      <label for="start">起始点：</label><input type="text" id="start">
+    </div>
+    <div style="padding-top: 10px;">
+      <label for="end">结束点：</label><input type="text" id="end">
+    </div>
+    <div class="btn-box">
+      <button class="btn" onclick="computed()">计算</button>
+    </div>
+  </div>
+  <script type="text/javascript"
+    src="https://webapi.amap.com/maps?v=1.4.15&key=965246e18843a35d5b5177136921d839"></script>
+  <script type="text/javascript">
+    //初始化地图对象，加载地图
+    var map = new AMap.Map("container", {
+      resizeEnable: true,
+      zoom: 13
+    });
+
+    function drawMarker(lng, lat) {
+      const marker = new AMap.Marker({
+        map: map,
+        draggable: true,
+        position: new AMap.LngLat(lng, lat)
+      });
+      return marker
+    }
+    var m1 = drawMarker(116.368904, 39.923423)
+    var m2 = drawMarker(116.387271, 39.922501)
+    map.setFitView();
+
+    var line = new AMap.Polyline({
+      strokeColor: '#80d8ff',
+      isOutline: true,
+      outlineColor: 'white'
+    });
+    line.setMap(map);
+    var text = new AMap.Text({
+      text: '',
+      style: {
+        'background-color': '#29b6f6',
+        'border-color': '#e1f5fe',
+        'font-size': '12px'
+      }
+    });
+    text.setMap(map)
+
+    function computed() {
+      const start = document.getElementById("start").value
+      const end = document.getElementById("end").value
+      const lnglat = [start.split(' '), end.split(' ')]
+      convertFrom(lnglat, 'gps')
+    }
+    // 转换坐标
+    function convertFrom(lnglat, type) {
+      AMap.convertFrom(lnglat, type, function (status, result) {
+        if (result.info === 'ok') {
+          const resLnglatArr = result.locations
+          console.log(lnglat, resLnglatArr)
+          m1.setPosition(resLnglatArr[0]); //更新点标记位置
+          m2.setPosition(resLnglatArr[1]); //更新点标记位置
+          computeDis()
+          map.setFitView();
+        }
+      })
+    }
+
+    // 计算
+    function computeDis() {
+      var p1 = m1.getPosition();
+      var p2 = m2.getPosition();
+      var textPos = p1.divideBy(2).add(p2.divideBy(2));
+      var distance = Math.round(p1.distance(p2));
+      var path = [p1, p2];
+      line.setPath(path);
+      text.setText('两点相距' + distance + '米')
+      text.setPosition(textPos)
+    }
+    computeDis();
+    m1.on('dragging', computeDis)
+    m2.on('dragging', computeDis)
+  </script>
+</body>
+
+</html>
