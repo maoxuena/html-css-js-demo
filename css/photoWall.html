@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 实现照片墙</title>
+  <style type="text/css">
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+    }
+
+    .photo-wall-page {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    .photo-wall-page .pic {
+      width: 160px;
+    }
+
+    .photo-wall-page img {
+      padding: 10px 10px 15px;
+      background: white;
+      border: 1px solid #ddd;
+      box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.4);
+      -webkit-transition: all 0.5s ease-in;
+      -moz-transition: all 0.5s ease-in;
+      -ms-transition: all 0.5s ease-in;
+      -o-transition: all 0.5s ease-in;
+      transition: all 0.5s ease-in;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .photo-wall-page img:hover {
+      box-shadow: 15px 15px 20px rgba(50, 50, 50, 0.4);
+      transform: rotate(0deg) scale(1.2);
+      -webkit-transform: rotate(0deg) scale(1.2);
+      z-index: 2;
+    }
+
+    .photo-wall-page .pic1 {
+      left: 400px;
+      top: 40px;
+      transform: rotate(-5deg);
+      -webkit-transform: rotate(-5deg);
+    }
+
+    .photo-wall-page .pic2 {
+      left: 200px;
+      top: 50px;
+      transform: rotate(-20deg);
+      -webkit-transform: rotate(-20deg);
+    }
+
+    .photo-wall-page .pic3 {
+      bottom: 100px;
+      right: 100px;
+      transform: rotate(5deg);
+      -webkit-transform: rotate(5deg);
+    }
+
+    .photo-wall-page .pic4 {
+      top: 200px;
+      left: 300px;
+      transform: rotate(-10deg);
+      -webkit-transform: rotate(-10deg);
+    }
+
+    .photo-wall-page .pic5 {
+      left: 150px;
+      top: 160px;
+      transform: rotate(-10deg);
+      -webkit-transform: rotate(-10deg);
+    }
+
+    .photo-wall-page .pic6 {
+      left: 50px;
+      top: 100px;
+      transform: rotate(10deg);
+      -webkit-transform: rotate(10deg);
+    }
+
+    .photo-wall-page .pic7 {
+      right: 50px;
+      top: 150px;
+      transform: rotate(20deg);
+      -webkit-transform: rotate(20deg);
+    }
+
+    .photo-wall-page .pic8 {
+      left: 100px;
+      top: 350px;
+      transform: rotate(5deg);
+      -webkit-transform: rotate(5deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="photo-wall-page">
+    <img class="pic pic1" src="../images/hoverEffect/1.jpg">
+    <img class="pic pic2" src="../images/hoverEffect/2.jpg">
+    <img class="pic pic3" src="../images/hoverEffect/3.jpg">
+    <img class="pic pic4" src="../images/hoverEffect/4.jpg">
+    <img class="pic pic5" src="../images/hoverEffect/5.jpg">
+    <img class="pic pic6" src="../images/hoverEffect/6.jpg">
+    <img class="pic pic7" src="../images/hoverEffect/7.jpg">
+    <img class="pic pic8" src="../images/hoverEffect/8.jpg">
+  </div>
+</body>
+
+</html>
