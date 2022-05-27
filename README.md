@@ -10,6 +10,7 @@ html、css、js 等实现的一些demo的汇总
 * css 绘制 bicycle： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/bicycle.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/bicycle.html)
 * css 绘制 dog： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/dog.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/dog.html)
 * 比赛排行榜鼠标悬停放大： [查看效果](https://maoxuena.github.io/html-css-js-demo/layout/leaderBoard.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/layout/leaderBoard.html)
+* 鼠标悬停图片动画过渡特效： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/hoverEffect.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/hoverEffect.html)
 * css 绘制 水滴： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/droplet.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/droplet.html)
 
 ## html + css + js
@@ -38,7 +39,7 @@ html、css、js 等实现的一些demo的汇总
 * cursor： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/cursor/index.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/cursor/index.html)
 
 ## 地图
-* cursor： [查看效果](https://maoxuena.github.io/html-css-js-demo/map/amap/计算两点之间距离.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/map/amap/计算两点之间距离.html)
+* 计算两点之间距离： [查看效果](https://maoxuena.github.io/html-css-js-demo/map/amap/计算两点之间距离.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/map/amap/计算两点之间距离.html)
 
 ## 组件模块
 ### 轮播
