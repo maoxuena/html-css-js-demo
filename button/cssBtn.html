@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 按钮动画</title>
+  <style type="text/css">
+    .btn-style {
+      padding-bottom: 20px;
+    }
+
+    .btn-style.btn-style-1 .btn-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg);
+    }
+
+    .btn-style.btn-style-1 .btn-container:nth-child(1) {
+      --btn-bg: #da0000;
+      --bg: #f22c3a;
+    }
+
+    .btn-style.btn-style-1 .btn-container:nth-child(2) {
+      --btn-bg: #fac300;
+      --bg: #fc6100;
+    }
+
+    .btn-style.btn-style-1 .btn-container button {
+      --width: 180px;
+      --height: 60px;
+      border: 0;
+      position: relative;
+      min-width: var(--width);
+      min-height: var(--height);
+      border-radius: var(--height);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 1rem;
+    }
+
+    .btn-style.btn-style-1 .btn-container button .text,
+    .btn-style.btn-style-1 .btn-container button .icon-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-style.btn-style-1 .btn-container button .icon-container {
+      --icon-size: 25px;
+      position: relative;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      margin-left: 15px;
+      transition: transform 500ms ease;
+    }
+
+    .btn-style.btn-style-1 .btn-container button .icon-container .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      transition: transform 500ms ease, opacity 250ms ease;
+    }
+
+    .btn-style.btn-style-1 .btn-container button .icon-container .icon svg {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+    }
+
+    .btn-style.btn-style-1 .btn-container button .icon-container .icon--left {
+      transform: translateX(-200%);
+      opacity: 0;
+    }
+
+    .btn-style.btn-style-1 .btn-container button::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--btn-bg);
+      border-radius: var(--height);
+      z-index: 1;
+      transition: transform 500ms ease;
+    }
+
+    .btn-style.btn-style-1 .btn-container button:hover::after {
+      transform: translateX(65%);
+    }
+
+    .btn-style.btn-style-1 .btn-container button:hover .icon-container {
+      transform: translateX(125%);
+    }
+
+    .btn-style.btn-style-1 .btn-container button:hover .icon-container .icon--left {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .btn-style.btn-style-1 .btn-container button:hover .icon-container .icon--right {
+      transform: translateX(200%);
+      opacity: 0;
+    }
+
+    .btn-style.btn-style-2 .btn-container {
+      padding: 100% 100% 0 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .btn-style.btn-style-2 .btn-container .mark {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-style.btn-style-2 .btn-container .link-position {
+      position: absolute;
+      z-index: 99;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn-style.btn-style-2 .btn-container .link {
+      color: #fff;
+      width: 160px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .icon {
+      text-align: center;
+      font-size: 128px;
+      padding: 20px 0;
+      transition: 0.2s linear;
+      -ms-transition: 0.2s linear;
+      -webkit-transition: 0.2s linear;
+      -o-transition: 0.2s linear;
+      -moz-transition: 0.2s linear;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .icon:hover {
+      transform: rotate(360deg) scale(1.2);
+      -ms-transform: rotate(360deg) scale(1.2);
+      -webkit-transform: rotate(360deg) scale(1.2);
+      -o-transform: rotate(360deg) scale(1.2);
+      -moz-transform: rotate(360deg) scale(1.2);
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button {
+      position: relative;
+      height: 50px;
+      line-height: 50px;
+      color: #2dcb70;
+      text-transform: uppercase;
+      font-weight: bold;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      padding-left: 20px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button .icon-right {
+      font-size: 14px;
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      position: absolute;
+      right: 20px;
+      top: 13px;
+      transition: 0.4s ease;
+      -ms-transition: 0.4s ease;
+      -webkit-transition: 0.4s ease;
+      -o-transition: 0.4s ease;
+      -moz-transition: 0.4s ease;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button .icon-right svg {
+      width: 100%;
+      height: 100%;
+      fill: #2dcb70;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button .line {
+      position: absolute;
+      display: block;
+      background: none;
+      transition: 0.4s ease;
+      -ms-transition: 0.4s ease;
+      -webkit-transition: 0.4s ease;
+      -o-transition: 0.4s ease;
+      -moz-transition: 0.4s ease;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button .line-top {
+      height: 2px;
+      width: 0px;
+      left: -110%;
+      top: -2px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button .line-bottom {
+      height: 2px;
+      width: 0px;
+      right: -110%;
+      bottom: -2px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button .line-left {
+      height: 0px;
+      width: 2px;
+      left: -2px;
+      bottom: -110%;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button .line-right {
+      height: 0px;
+      width: 2px;
+      right: -2px;
+      top: -110%;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button:hover {
+      border: 2px solid white;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button:hover .icon-right {
+      right: 10px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button:hover .line {
+      background-color: #fff;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button:hover .line-top {
+      width: calc(100% + 2px);
+      left: -2px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button:hover .line-bottom {
+      width: calc(100% + 2px);
+      right: -2px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button:hover .line-left {
+      height: calc(100% + 2px);
+      bottom: -2px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .button:hover .line-right {
+      height: calc(100% + 2px);
+      top: -2px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .tip {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0 14px;
+      height: 35px;
+      line-height: 35px;
+      background-color: #2dcb70;
+      color: #fff;
+      font-size: 16px;
+      font-weight: normal;
+      text-transform: none;
+      margin: 0 auto;
+      border-radius: 5px;
+      opacity: 0;
+      transition: 0.4s ease;
+      -ms-transition: 0.4s ease;
+      -webkit-transition: 0.4s ease;
+      -o-transition: 0.4s ease;
+      -moz-transition: 0.4s ease;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .tip em {
+      font-style: none;
+      white-space: nowrap;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link .tip span {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border: 7px solid transparent;
+      border-top-color: #2dcb70;
+      left: 50%;
+      margin-left: -3px;
+      bottom: -13px;
+    }
+
+    .btn-style.btn-style-2 .btn-container .link:hover .tip {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="css-button-page">
+    <div class="btn-style btn-style-1">
+      <div class="btn-container">
+        <button>
+          <span class="text">登录</span>
+          <div class="icon-container">
+            <div class="icon icon--left">
+              <svg>
+                <use xlink:href="#arrow-right"></use>
+              </svg>
+            </div>
+            <div class="icon icon--right">
+              <svg>
+                <use xlink:href="#arrow-right"></use>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="btn-container">
+        <button>
+          <span class="text">注册</span>
+          <div class="icon-container">
+            <div class="icon icon--left">
+              <svg>
+                <use xlink:href="#arrow-right"></use>
+              </svg>
+            </div>
+            <div class="icon icon--right">
+              <svg>
+                <use xlink:href="#arrow-right"></use>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <!-- 按钮 箭头 图标 -->
+      <svg style="display: none;">
+        <symbol id="arrow-right" viewBox="0 0 20 10">
+          <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
+        </symbol>
+      </svg>
+    </div>
+    <!-- 图标 -->
+    <svg style="display: none;" width="200" height="200">
+      <symbol id="icon" viewBox="0 0 1024 1024">
+        <path
+          d="M808.53 442.25l-221.17-78.5-78.5-221.17a52 52 0 0 0-98 0l-78.5 221.17-221.17 78.5a52 52 0 0 0 0 98l221.17 78.49 78.49 221.17a52 52 0 0 0 98 0l78.5-221.17 221.17-78.49a52 52 0 0 0 0-98zM554.3 554.08a51.78 51.78 0 0 0-31.61 31.61l-62.83 177-62.86-177a51.78 51.78 0 0 0-31.61-31.61l-177-62.83 177-62.83A51.77 51.77 0 0 0 397 396.81l62.83-177 62.83 177a51.78 51.78 0 0 0 31.61 31.61l177 62.83z"
+          p-id="947"></path>
+        <path
+          d="M769.13 638.13l-126.79 44.61a36 36 0 1 0 23.9 67.92L793 706.05a36 36 0 0 0-23.89-67.92zM689 798.67l-85.44 30.06a36 36 0 1 0 23.9 67.92l85.44-30.06a36 36 0 1 0-23.9-67.92z"
+          p-id="948"></path>
+      </symbol>
+    </svg>
+    <div class="btn-style btn-style-2">
+      <p>幽灵按钮</p>
+      <div class="btn-container">
+        <div class="mark"></div>
+        <div class="link link-position">
+          <div class="icon">
+            <svg width="100%" height="100%">
+              <use xlink:href="#icon"></use>
+            </svg>
+          </div>
+          <div class="button">
+            <span class="line line-top"></span>
+            <span class="line line-left"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            service
+            <div class="icon-right">
+              <svg>
+                <use xlink:href="#arrow-right"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="tip">
+            <em>tips: customer service</em>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
