@@ -16,7 +16,7 @@ html、css、js 等实现的一些demo的汇总
 * 鼠标悬停图片动画过渡特效： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/hoverEffect.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/hoverEffect.html)
 * css 实现照片墙： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/photoWall.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/photoWall.html)
 * css 绘制 水滴： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/droplet.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/droplet.html)
-* Apple Watch 上的呼吸灯动画效果：[查看效果](https://maoxuena.github.io/html-css-js-demo/css/Apple Watch 上的呼吸灯动画效果.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/Apple Watch 上的呼吸灯动画效果.html)
+* Apple Watch 上的呼吸灯动画效果：[查看效果](https://maoxuena.github.io/html-css-js-demo/css/AppleWatch上的呼吸灯动画效果.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/AppleWatch上的呼吸灯动画效果.html)
 
 ## html + css + js
 * 一个简单的收藏动画： [查看效果](https://maoxuena.github.io/html-css-js-demo/collect/index.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/collect/index.html)
