@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒计时</title>
+  <style type="text/css">
+    .count-down-wrap{
+      width: 80%;
+      min-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: "微软雅黑";
+      font-size: 40px;
+      margin: 20px 0;
+      border-bottom: solid 1px #ccc;
+      padding-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .time-item strong {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      background: #C71C60;
+      color: #fff;
+      line-height: 49px;
+      font-size: 36px;
+      font-family: Arial;
+      padding: 0 10px;
+      margin-right: 10px;
+      border-radius: 5px;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    #day_show {
+      float: left;
+      line-height: 49px;
+      color: #c71c60;
+      font-size: 32px;
+      margin: 0 10px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .item-title .unit {
+      background: none;
+      line-height: 49px;
+      font-size: 24px;
+      padding: 0 10px;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="count-down-wrap">
+    <h1>倒计时</h1>
+    <div class="time-item" id="demo01">
+      <strong id="day" class="day">0天</strong>
+      <strong id="hour" class="hour">0时</strong>
+      <strong id="minute" class="minute">0分</strong>
+      <strong id="second" class="second">0秒</strong>
+      <strong id="haomiao" class="second">0</strong>毫秒
+    </div>
+  </div>
+  <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      countDown("2023/9/28 15:30:00", "#demo01 .day", "#demo01 .hour", "#demo01 .minute", "#demo01 .second");
+    });
+    function countDown(time, day_elem, hour_elem, minute_elem, second_elem) {
+      var end_time = new Date(time).getTime(), //月份是实际月份-1
+        sys_second = (end_time - new Date().getTime());
+      var timer = setInterval(function () {
+        if (sys_second > 0) {
+          sys_second -= 10;
+          var day = Math.floor((sys_second / 1000 / 3600) / 24);
+          var hour = Math.floor((sys_second / 1000 / 3600) % 24);
+          var minute = Math.floor((sys_second / 1000 / 60) % 60);
+          var second = Math.floor(sys_second / 1000 % 60);
+          var haomiao = Math.floor(sys_second % 1000);
+          day_elem && $(day_elem).text(day + '天');//计算天
+          $(hour_elem).text((hour < 10 ? "0" + hour : hour) + '时'); //计算小时
+          $(minute_elem).text((minute < 10 ? "0" + minute : minute) + '分'); //计算分
+          $(second_elem).text((second < 10 ? "0" + second : second) + '秒'); // 计算秒
+          $("#haomiao").text(haomiao); // 计算秒
+        } else {
+          clearInterval(timer);
+        }
+      }, 10);
+    }
+  </script>
+</body>
+
+</html>
