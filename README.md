@@ -18,6 +18,8 @@ html、css、js 等实现的一些demo的汇总
 * css 绘制 水滴： [查看效果](https://maoxuena.github.io/html-css-js-demo/css/droplet.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/droplet.html)
 * Apple Watch 上的呼吸灯动画效果：[查看效果](https://maoxuena.github.io/html-css-js-demo/css/AppleWatch上的呼吸灯动画效果.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/AppleWatch上的呼吸灯动画效果.html)
 * 纯css星空背景：[查看效果](https://maoxuena.github.io/html-css-js-demo/css/star.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/star.html)
+* 无缝滚动：[查看效果](https://maoxuena.github.io/html-css-js-demo/css/无缝滚动.html) | [代码](https://github.com/maoxuena/html-css-js-demo/tree/master/css/无缝滚动.html)
+
 
 
 ## html + css + js
